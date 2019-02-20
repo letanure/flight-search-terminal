@@ -8,6 +8,12 @@ const instance = axios.create({
   }
 })
 
+const listCurrencies = async () => {
+  const response = await instance.get('reference/v1.0/currencies')
+  const data = await response.data.Currencies
+  return data
+}
+
 const listMarkets = async () => {
   const response = await instance.get('reference/v1.0/countries/en-US')
   const data = await response.data.Countries
@@ -22,5 +28,6 @@ const listPlaces = async (query, countryCode, currencyCode = 'EUR', localeISO = 
 
 module.exports = {
   listMarkets,
+  listCurrencies,
   listPlaces
 }
