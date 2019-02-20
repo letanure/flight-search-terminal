@@ -8,6 +8,12 @@ const instance = axios.create({
   }
 })
 
+const listMarkets = async () => {
+  const response = await instance.get('reference/v1.0/countries/en-US')
+  const data = await response.data.Countries
+  return data
+}
+
 const listPlaces = async (query, countryCode, currencyCode = 'EUR', localeISO = 'en-GB') => {
   const response = await instance.get(`autosuggest/v1.0/${countryCode}/${currencyCode}/${localeISO}/?query=${query}`)
   const data = await response.data.Places
@@ -15,5 +21,6 @@ const listPlaces = async (query, countryCode, currencyCode = 'EUR', localeISO = 
 }
 
 module.exports = {
+  listMarkets,
   listPlaces
 }
