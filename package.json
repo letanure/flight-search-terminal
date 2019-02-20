@@ -1,0 +1,29 @@
+{
+	"name": "flights-search",
+	"version": "1.0.0",
+	"description": "Command line flight search",
+	"main": "src/index.js",
+	"author": "Luiz Tanure",
+	"license": "MIT",
+	"keywords": [
+		"flights",
+		"skyscanner",
+		"cli"
+	],
+	"bugs": {
+		"url": "https://github.com/letanure/flight-search-terminal/issues"
+	},
+	"homepage": "https://github.com/letanure/flight-search-terminal#readme",
+	"husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+	"dependencies": {
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^7.5.2",
+		"@commitlint/config-conventional": "^7.5.0",
+		"husky": "^1.3.1"
+	}
+}
