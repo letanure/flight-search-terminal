@@ -3,6 +3,7 @@
 
 const inquirer = require('inquirer')
 const clear = require('clear')
+const menuConfig = require('./menuConfig')
 
 const menuMain = async () => {
   clear()
@@ -23,6 +24,7 @@ const init = async () => {
   const menuOption = await menuMain()
   switch (menuOption.value) {
     case 'menuConfig':
+      menuConfig.editConfig()
       break
   }
 }
